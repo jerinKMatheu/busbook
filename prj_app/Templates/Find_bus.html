@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    {% load static %}
+    <link href="{% static 'CSS/style.css' %}" rel="stylesheet">
+    <title>Document</title>
+    <style>
+     body{
+        margin:0;
+        padding: 0;
+     }
+     .find_my_bus{
+        width:100%;
+        height:250px;
+    
+     }
+     .fieldset{
+        border-color: #FFD24C;
+        height:45px;
+        border-radius: 20px;
+     }
+     .Bus-list{
+        width:100%;
+        height: 100px;
+        margin: 60px;
+        margin-left: 0px;
+        
+     }
+     .Bus-list:hover{
+        background-color: #FFD24C;
+     }
+     /* Modal styles */
+    .modal {
+        display: none; /* Hide the modal by default */
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0,0,0,0.4); /* Black background with opacity */
+    }
+
+    /* Modal content styles */
+    .modal-content {
+        background-color: #fefefe;
+        margin: 15% auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 40%;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        animation-name: modalopen;
+        animation-duration: 0.5s;
+    }
+
+    /* Modal open animation */
+    @keyframes modalopen {
+        from {opacity: 0}
+        to {opacity: 1}
+    }
+    .details{
+        width:100%;
+        height: 200px;
+        background-color: #fefefe;
+    }
+    .position{
+        margin-left: 520px;
+    margin-bottom: 10px;
+        
+    }
+    </style>
+    
+</head>
+<body>
+    <div class="container-fuild">
+        <div class="find_my_bus  shadow-lg">
+            <br><br>
+            <div class="container">
+              <form class="form">
+                   <div class="form-group">
+                       <input type="text" name="entry" placeholder="Enter starting stop" class="form-control fieldset">
+                   </div><br><br><br>
+                   <div class="form-group">
+                    <input type="text" name="entry" placeholder="Enter ending stop" class="form-control fieldset">
+                </div>
+              </form>
+            </div>
+        </div>
+        <!--Book Ticket Modal-->
+        
+         <!-- Button trigger modal -->
+
+   
+  
+  
+        <!--Div for display result-->
+       
+
+              <div class="container">
+                 <a href="#" id="openModal" ><div class="Bus-list shadow-lg " >
+                 </div>
+                </a>
+            </div>
+        
+    </div>
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="close position"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAB7ElEQVR4nO2Z3UrDMBTH81Amft01012oCOKt+BAqKA4miCJ44Y0PIIj4id6IdzrfwyFDbzargjYbrZVFWtexuXY2TZN0kD+cu5X9fzkn56QNAFpaWlqZVh2jWWKge8tAhGBEZYTl/ZcBS3VjaIbLvIXRjizTJAoGw63kK6/YPGkHnGYG8MomQwB37AAYWhkC+EwAoNo06goNQKJWJz9GSW54QDOQH6ffN9fUPT1ihrALK36oA2iZp+a7HywQ9voSpVWT0tortTfW1AC4Z8dt80F8HR78C9E2HzxXiweROkBjYY42H8o9EP0y0WPebAEUV9XsARYIHvNEZBuNA8FrnoieA/0g7MIyt3kiY5BFQdCXN27zRNYkjoTgNE9kHiV8iMpTaCbsYryeT1QC+Bu29qfmgz1xwj6xiUyA0G6TEgQQDRDVKpuV51QggEiAfn0+ssUyQgBRAHGGVBoQQAQAy4TlhQBpAyQ5HjQW52mz/Bh+isWSAdyri24jVTPWC0pYJpz9PQUlNDFC3cvzRBO2E8KJYV7cJp4c9TPB8mrYWU7O7nbs34sBkBhAA+CBywDMzqdFA36wAxiwpNw4DgLeMgN4lwvqjaPfyKEpkETe5YJq85aBNgGPvMsF7/u83D0BLa9sEq+8lpaWFpClH85QF54vuUIVAAAAAElFTkSuQmCC"></span>
+          <!-- <p>This is a modal! You can put any content here.</p> -->
+          <center>
+          <!-- <ul>
+            <li>Frm:ABCADAHA</li>
+            <li>To:XVBHYJKKK</li>
+            <li><input type="date" placeholder="Choose date"></li>
+            <li>Bus:hsdkhja</li>
+          </ul> -->
+          <div class="details shadow-lg">
+             <table>
+                <tr>
+                    <th>From </th>
+                    <th>:ABCADAHA</th>
+                </tr>
+                <br>
+                <tr>
+                    <th>To </th>
+                    <th>:ABCADAHA</th>
+                </tr>
+                <br>
+                <tr>
+                    <th>Choose date</th>
+                    <th><input type="date" class="form-control"></th>
+                </tr>
+             </table>
+             
+          </div>
+          </center>
+          <br><br>
+          <button type="button" class="btn btn-warning">Book Ticket</button>
+        </div>
+      
+      </div>
+    <script>
+        // Get the modal
+        var modal = document.getElementById("myModal");
+        
+        // Get the anchor tag that opens the modal
+        var anchor = document.getElementById("openModal");
+        
+        // Get the <span> element that closes the modal
+        var span = modal.querySelector(".close");
+        
+        // When the user clicks the anchor tag, open the modal
+        anchor.onclick = function() {
+          modal.style.display = "block";
+        }
+        
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+          modal.style.display = "none";
+        }
+        
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+          if (event.target == modal) {
+            modal.style.display = "none";
+          }
+        }
+        </script>
+</body>
+</html>

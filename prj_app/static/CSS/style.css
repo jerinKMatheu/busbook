@@ -1,0 +1,96 @@
+body{
+    background-color: #FFFFFF;
+    margin: 0;
+    font-family: "noto_sansregular";
+}
+a{
+    text-decoration: none;
+}
+.account{
+    background-color: #FFFFFF;
+    width:60px;
+    height:60px;
+    margin-left:15px;
+    float: left;
+    margin-top:25px;
+    border-radius: 50%;
+    border-color: black;
+}
+.img{
+    margin:5px;
+}
+.stop-name{
+    margin-left: 50px;
+    margin-top: -27px;
+
+}
+.steps{
+    margin-left: 1366px;
+    margin-top: -39px;
+}
+.bus-timer{
+    margin-left: 1366px;
+    margin-top: -45px;
+}
+.time-to-stop{
+    margin-top: -19px;
+    margin-left: 13px;
+    font-display:initial ;
+}
+.Find-bus{
+    width:100%;
+    height:15vh;
+    background-color: #FFD24C;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+}
+.Bus-list{
+    margin-left: 48px;
+    margin-top: -25px;
+}
+.Header-section{
+    width:99%;
+    height:33vh;
+    background-color: #FFFFFF;
+    margin:10px;
+    margin-top: 0;
+    
+}
+.Nearest-Bus-Stop{
+    width:99%;
+    height:45vh;
+    background-color: #FFFFFF;
+    margin:10px;
+    margin-top: -27px;
+    float: left;
+}
+.Map-section{
+    width:99%;
+    height:40vh;
+    background-color: #FFFFFF;
+    margin:10px;
+    margin-top: -27px;
+    float: left;
+}
+.form-field{
+    padding-top: 80px;
+
+}
+.anchor{
+    width:90%;
+    border-radius:50px;
+    margin-left:80px;
+    border-color: #FF9843;
+}
+.find_my_bus{
+    width:99%;
+    height:33vh;
+    background-color: #FFFFFF;
+    margin:10px;
+    margin-top: 0;
+}
+.options{
+    width:100%;
+    height:40px;
+    background-color: rgb(176, 176, 83);
+}

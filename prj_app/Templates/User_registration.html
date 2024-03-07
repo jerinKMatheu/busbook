@@ -1,0 +1,96 @@
+{% extends 'Account.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration Form</title>
+  <!-- Bootstrap CSS -->
+  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"> -->
+  
+  <style>
+    
+  </style>
+</head>
+<body>
+    {% block content%}
+    <div class="container">
+      {% for msg in messages %}
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <strong>Hey !</strong> {{msg}}<p class="text-login" data-toggle="modal"  data-target="#loginModal" data-bs-dismiss="offcanvas"  ><button class="btn btn-warning position">Sign-in to continue</button></p>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+
+                </div>
+        {% endfor %}
+        <div class="register-box shadow-lg p-3 ">
+            <br>
+        <div class="  row justify-content-center ">
+          <div class="col-md-6">
+            
+            <form action="" method="post">
+                {% csrf_token %}
+              <div class="form-group ">
+                <div class="form-floating mb-3">
+                    <input type="email" class="form-control" id="floatingInput" placeholder="" name="email">
+                    <label for="floatingInput ">Enter Email address</label>
+                  </div>
+              </div>
+              <div class="form-group">
+                <div class="form-floating mb-3">
+                    <input type="number" class="form-control" id="floatingInput" placeholder="" name="phone">
+                    <label for="floatingInput">Enter Mobile Number</label>
+                  </div>
+              </div>
+              <div class="form-group">
+                <div class="form-floating">
+                    <input type="password" class="form-control" id="id_password" placeholder="Create Password" name="password">
+                    <label for="floatingPassword">Create Password</label>
+              </div>
+              </div>
+              <div class="form-group">
+                <div class="form-floating">
+                    <input type="password" class="form-control" id="id_confirm_password" placeholder="Confirm Password" name="confirm_password">
+                    <label for="floatingPassword"> Confirm Password</label>
+              </div>
+              </div>
+              <div id="password_alert" class="alert alert-danger d-none" role="alert"></div>
+              <div class="form-group">
+              <button type="submit" class="btn btn-warning register-btn">Register</button>
+              </div>
+            </form>
+            <p class="text-login"  >Already have an account?<p class="login-anchor" data-toggle="modal"  data-target="#loginModal" data-bs-dismiss="offcanvas">Sign-In</p></p>
+          </div>
+        
+        </div>
+      </div>
+      
+      <script>
+        $(document).ready(function() {
+            $('#id_confirm_password').keyup(function() {
+                var password = $('#id_password').val();
+                var confirmPassword = $(this).val();
+                if (password != confirmPassword) {
+                    // Display alert
+                    $('#password_alert').text('Passwords do not match').removeClass('d-none');
+                } else {
+                    // Hide alert
+                    $('#password_alert').text('').addClass('d-none');
+                }
+            });
+        });
+        </script>
+         
+      <!-- Add this in your HTML template -->
+     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+      <!-- Bootstrap JS and jQuery (for optional password match validation) -->
+      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+      
+     
+{% endblock %}
+</body>
+</html>
